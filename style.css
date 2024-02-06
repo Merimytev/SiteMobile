@@ -10,8 +10,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  /* wrapper */
+  max-width: 1200px;  /* wrapper */
   margin: 0 auto;
   padding: 0 50px;
 }
@@ -377,31 +376,63 @@ button {
   padding-top: 20px;
 }
 
-.reviews_block {
-  padding-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 100px;
+.Reviews {
+  padding-bottom: 150px;
 }
 
-.Reviews img {
-  display: flex;
-  justify-content: center;
-}
-
-.review {
+.rev {
   max-width: 380px;
   max-height: 82px;
 }
 
-.review p {
-  display: flex;
-  justify-content: center;
+.rev p {
   color: #FFF;
   text-align: center;
   font-family: "Open Sans";
   font-size: 14px;
   font-style: italic;
+}
+
+.rev h3 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 18px;
+}
+
+hr {
+  color: white;
+}
+
+.c1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.elm {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: all .8s;
+}
+
+.active {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  opacity: 1;
+  height: 400px;
+  transition: all .8s;
+}
+
+.l1 {
+  left: 0;
+}
+.r1 {
+  right: 0;
 }
 
 .stars {

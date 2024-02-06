@@ -1,23 +1,22 @@
-const slidesContainer = document.querySelector('.slides');
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-let currentIndex = 0;
+let elm = document.querySelectorAll('.elm')
+let r1 = document.querySelector('.r1')
+let l1 = document.querySelector('.l1')
 
-function prevSlide() {
-    currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
-    updateSlidePosition();
+let count = 0;
+function right() {   
+    elm[count].classList.remove('active')
+    count = (count + 1) % elm.length
+    elm[count].classList.add('active')
 }
 
-function nextSlide() {
-    currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-    updateSlidePosition();
-}
+function left() {
+    elm[count].classList.remove('active')
+    count = (count - 1 + elm.length) % elm.length
+    elm[count].classList.add('active')
+ }
 
-function updateSlidePosition() {
-    const newPosition = -currentIndex * slides[0].offsetWidth;
-    slidesContainer.style.transform = `translateX(${newPosition}px)`;
-}
+setInterval(right,15000)
+ 
+l1.addEventListener('click', left)
 
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
+r1.addEventListener('click', right)
